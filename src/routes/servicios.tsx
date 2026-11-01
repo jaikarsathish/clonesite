@@ -3,15 +3,6 @@ import { useState } from 'react'
 import { ContactFields, Gap, NonSendingNotice, Shell } from '@/components/ulah'
 
 export const Route = createFileRoute('/servicios')({
-  head: () => ({
-    title: 'Servicios - Ulah',
-    meta: [
-      { name: 'description', content: 'Nuestros servicios: producción audiovisual, marketing digital, diseño web UX/UI, SEO e investigación.' },
-      { property: 'og:title', content: 'Servicios - Ulah' },
-      { property: 'og:url', content: 'https://ulah.es/servicios/' },
-    ],
-    links: [{ rel: 'canonical', href: 'https://ulah.es/servicios/' }],
-  }),
   component: Servicios,
 })
 

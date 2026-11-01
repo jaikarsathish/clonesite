@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router'
-import { seoConfig, seoHead } from '@/lib/monstarx/seo'
+import { seoHead } from '@/lib/monstarx/seo'
 
 import appCss from '../styles.css?url'
 
@@ -18,7 +18,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: ReactNode }) {
   return (
-    <html lang={seoConfig.locale || 'en'}>
+    <html lang="es">
       <head>
         <HeadContent />
       </head>

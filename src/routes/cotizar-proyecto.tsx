@@ -3,15 +3,6 @@ import { useState } from 'react'
 import { ContactFields, NonSendingNotice, Shell } from '@/components/ulah'
 
 export const Route = createFileRoute('/cotizar-proyecto')({
-  head: () => ({
-    title: 'Cotizar proyecto - Ulah',
-    meta: [
-      { name: 'description', content: 'Habla con un experto digital y cotiza tu proyecto: diseño web, marketing digital, marca, redes sociales y estrategia digital.' },
-      { property: 'og:title', content: 'Cotizar proyecto - Ulah' },
-      { property: 'og:url', content: 'https://ulah.es/cotizar-proyecto/' },
-    ],
-    links: [{ rel: 'canonical', href: 'https://ulah.es/cotizar-proyecto/' }],
-  }),
   component: Cotizar,
 })
 

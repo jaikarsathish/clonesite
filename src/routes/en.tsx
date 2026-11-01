@@ -1,19 +1,8 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ContactFields, NonSendingNotice, Shell } from '@/components/ulah'
 
 export const Route = createFileRoute('/en')({
-  head: () => ({
-    title: 'Ulah - UX web design, video, SEO and Marketing',
-    meta: [
-      { name: 'description', content: 'Ulah is a creative agency in Europe for brand consulting, digital interfaces and marketing, whether freelancer, SME or large company.' },
-      { property: 'og:title', content: 'Ulah - UX web design, video, SEO and Marketing' },
-      { property: 'og:url', content: 'https://ulah.es/en/' },
-      { property: 'og:image', content: 'https://ulah.es/wp-content/uploads/2022/04/Emoji.webp' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-    ],
-    links: [{ rel: 'canonical', href: 'https://ulah.es/en/' }],
-  }),
   component: HomeEN,
 })
 
@@ -29,6 +18,12 @@ const CLIENTS = [
 
 function HomeEN() {
   const [sent, setSent] = useState(false)
+  useEffect(() => {
+    document.documentElement.lang = 'en'
+    return () => {
+      document.documentElement.lang = 'es'
+    }
+  }, [])
   return (
     <Shell lang="en">
       <section className="border-b border-neutral-200 bg-neutral-50">

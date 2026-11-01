@@ -3,19 +3,6 @@ import { useState } from 'react'
 import { ContactFields, Gap, NonSendingNotice, Shell } from '@/components/ulah'
 
 export const Route = createFileRoute('/')({
-  head: () => ({
-    title: 'Ulah - Diseño web UX, Marketing y Servicios Digitales',
-    meta: [
-      { name: 'description', content: 'Ulah es una agencia creativa en Europa de asesoría en marca, creación de interfaces digitales y marketing, seas autónomo, pyme o gran empresa.' },
-      { property: 'og:title', content: 'Ulah - Diseño web UX, Marketing y Servicios Digitales' },
-      { property: 'og:description', content: 'Ulah es una agencia creativa en Europa de asesoría en marca, creación de interfaces digitales y marketing, seas autónomo, pyme o gran empresa.' },
-      { property: 'og:url', content: 'https://ulah.es/' },
-      { property: 'og:image', content: 'https://ulah.es/wp-content/uploads/2022/04/Emoji.webp' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Ulah - Diseño web UX, Marketing y Servicios Digitales' },
-    ],
-    links: [{ rel: 'canonical', href: 'https://ulah.es/' }],
-  }),
   component: HomeES,
 })
 

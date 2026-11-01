@@ -3,15 +3,6 @@ import { useState } from 'react'
 import { Shell } from '@/components/ulah'
 
 export const Route = createFileRoute('/portafolio')({
-  head: () => ({
-    title: 'Portafolio - Ulah',
-    meta: [
-      { name: 'description', content: 'Portafolio de proyectos Ulah: diseño web y marketing. Conoce nuestro trabajo.' },
-      { property: 'og:title', content: 'Portafolio - Ulah' },
-      { property: 'og:url', content: 'https://ulah.es/portafolio/' },
-    ],
-    links: [{ rel: 'canonical', href: 'https://ulah.es/portafolio/' }],
-  }),
   component: Portafolio,
 })
 

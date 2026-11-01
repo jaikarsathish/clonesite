@@ -7,7 +7,7 @@ export const NAV_ES = [
   { label: 'Servicios', to: '/servicios' },
   { label: 'Portafolio', to: '/portafolio' },
   { label: 'Nosotros', to: '/nosotros' },
-  { label: 'Blog', to: '/nosotros' },
+  { label: 'Blog', href: 'https://ulah.es/blog/' },
   { label: 'Contacto', to: '/cotizar-proyecto' },
 ]
 
@@ -15,7 +15,7 @@ export const NAV_EN = [
   { label: 'Services', to: '/en' },
   { label: 'Portfolio', to: '/portafolio' },
   { label: 'About Us', to: '/nosotros' },
-  { label: 'Blog', to: '/nosotros' },
+  { label: 'Blog', href: 'https://ulah.es/blog/' },
   { label: 'Contact Us', to: '/cotizar-proyecto' },
 ]
 
@@ -30,11 +30,17 @@ export function Header({ lang }: { lang: 'es' | 'en' }) {
           <img src={LOGO_URL} alt="Ulah" className="h-8 w-auto md:h-10" loading="eager" />
         </Link>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Principal">
-          {nav.map((n) => (
-            <Link key={n.label} to={n.to} className="text-sm font-medium text-neutral-800 hover:text-black">
-              {n.label}
-            </Link>
-          ))}
+          {nav.map((n) =>
+            'href' in n && n.href ? (
+              <a key={n.label} href={n.href} className="text-sm font-medium text-neutral-800 hover:text-black">
+                {n.label}
+              </a>
+            ) : (
+              <Link key={n.label} to={(n as { to: string }).to} className="text-sm font-medium text-neutral-800 hover:text-black">
+                {n.label}
+              </Link>
+            ),
+          )}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
           <Link to="/" className={`text-sm font-semibold ${lang === 'es' ? 'text-black' : 'text-neutral-400'}`}>
@@ -63,9 +69,15 @@ export function Header({ lang }: { lang: 'es' | 'en' }) {
           <ul className="space-y-1">
             {nav.map((n) => (
               <li key={n.label}>
-                <Link to={n.to} className="block rounded-lg px-2 py-2.5 text-base font-medium hover:bg-neutral-100" onClick={() => setOpen(false)}>
-                  {n.label}
-                </Link>
+                {'href' in n && n.href ? (
+                  <a href={n.href} className="block rounded-lg px-2 py-2.5 text-base font-medium hover:bg-neutral-100" onClick={() => setOpen(false)}>
+                    {n.label}
+                  </a>
+                ) : (
+                  <Link to={(n as { to: string }).to} className="block rounded-lg px-2 py-2.5 text-base font-medium hover:bg-neutral-100" onClick={() => setOpen(false)}>
+                    {n.label}
+                  </Link>
+                )}
               </li>
             ))}
             <li className="flex items-center gap-3 px-2 py-2">
@@ -118,8 +130,8 @@ export function Footer({ lang }: { lang: 'es' | 'en' }) {
           <h3 className="text-sm font-bold uppercase tracking-wider text-white">{moreLabel}</h3>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link to="/cotizar-proyecto" className="hover:text-white">{contactLabel}</Link></li>
-            <li><span className="text-neutral-400">Aviso Legal</span></li>
-            <li><span className="text-neutral-400">Política de Privacidad</span></li>
+            <li><a href="https://ulah.es/aviso-legal/" className="hover:text-white">Aviso Legal</a></li>
+            <li><a href="https://ulah.es/politica-de-privacidad/" className="hover:text-white">Política de Privacidad</a></li>
           </ul>
         </div>
         <div>

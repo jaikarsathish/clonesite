@@ -2,15 +2,6 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import { Gap, Shell } from '@/components/ulah'
 
 export const Route = createFileRoute('/nosotros')({
-  head: () => ({
-    title: 'Nosotros - Ulah',
-    meta: [
-      { name: 'description', content: 'Acerca de Ulah: Alberto Costell San Román, consultoría de marca, diseño de interfaces digitales y marketing.' },
-      { property: 'og:title', content: 'Nosotros - Ulah' },
-      { property: 'og:url', content: 'https://ulah.es/nosotros/' },
-    ],
-    links: [{ rel: 'canonical', href: 'https://ulah.es/nosotros/' }],
-  }),
   component: Nosotros,
 })
 
