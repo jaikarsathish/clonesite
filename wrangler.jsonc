@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ulah-site-replica",
+  "compatibility_date": "2025-09-02",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "main": "@tanstack/react-start/server-entry",
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ulah-site-replica-db",
+      "database_id": "4315c71e-7177-4b8d-bdb4-b4afd8c95b53",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
